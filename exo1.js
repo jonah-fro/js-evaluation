@@ -28,7 +28,6 @@ function gridGenerator(xAxis, yAxis) {
   return table;
 }
 
-
 function getRandomColor() {
   function random() {
     return Math.random()*255;
@@ -43,5 +42,16 @@ function selecteRandomColor(table) {
   return tds[Math.floor(Math.random) * tds.length];
 }
 
+function updateColor(table) {
+  var cell = table.getElementsByTagName("td");
+  for (var i = 0; i < cell.length; i++) {
+    var color = getRandomColor();
+    cell[i].style.background = color;
+  }
+}
 
-
+var table = gridGenerator(20, 9);
+setInterval(function() {
+    updateColor(table);
+},1000)
+updateColor(table);
