@@ -28,10 +28,20 @@ function gridGenerator(xAxis, yAxis) {
   return table;
 }
 
-/*
- const body = document.getElementsByTagName('body')[0];
-  const tbl = document.createElement('table');
-  tbl.style.width = '100%';
-  tbl.style.height = '50px';
-  tbl.setAttribute('border', '1');
-  body.appendChild(tbl)*/
+
+function getRandomColor() {
+  function random() {
+    return Math.random()*255;
+  }
+  return "rgb(" +random()+ "," +random()+ "," +random()+")";
+}
+
+function selecteRandomColor(table) {
+  var tds = table.getElementsByTagName("td");
+
+
+  return tds[Math.floor(Math.random) * tds.length];
+}
+
+
+
