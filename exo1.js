@@ -6,27 +6,28 @@ chaque case de la grille d’une couleur différente
 toutes les “1s” à “2s”. */
 
 function gridGenerator(xAxis, yAxis) {
-  const tab = document.createElement("table");
-  const tr = document.createElement("tr");
-  const td = document.createElement("td");
+  var table = document.createElement("table");
+  var tr = document.createElement("tr");
+  var td = document.createElement("td");
 
-  for (let i = 1; i < xAxis.length; i++) {
-    for (let j = 0; j < yAxis.length; j++) {
-      return td[j];
-    }
-    return tr[i];
+
+  for (j = 0; j < xAxis; j++) {
+    tr.appendChild(td.cloneNode());
+    tr.style.width = "100px";
+    tr.style.height = "20px";
+  }
+ 
+  for (i = 0; i < yAxis; i++) {
+    table.appendChild(tr.cloneNode(true));
+    td.style.width = "100px";
+    td.style.height = "20px";
   }
 
-
-  document.body.appendChild(tab);
-  tab.appendChild(tr);
-  tr.appendChild(td);
+  document.body.appendChild(table);
+ 
+  return table;
 }
-gridGenerator(9, 9);
 
-function updateRandomColor() {
-  get.style.background;
-}
 /*
  const body = document.getElementsByTagName('body')[0];
   const tbl = document.createElement('table');
