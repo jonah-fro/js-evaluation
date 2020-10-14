@@ -15,12 +15,18 @@
 }
     
 drawBar();*/
+
+/**
+*Défini la somme total et la portion de la barre chargée de la barre 
+*@param sum = Somme totale du nombre
+*@param nbr = portion de la barre chargée
+*/
 var drawBar = function DrawBar(sum, nbr) {
   this.sum = sum;
   this.nbr = nbr;
 }
 
-
+/** responsivité, stylisation et creation de la barre */
 drawBar.prototype.run = function(){
 var divP = document.createElement("div");
 var divE = document.createElement("div");
@@ -38,6 +44,6 @@ divE.style.borderRadius = "20px";
 divP.appendChild(divE);
 document.body.appendChild(divP);
 }
-
+/** lance le programme*/
 var loadedBar = new drawBar(100, 50);
 loadedBar.run();
