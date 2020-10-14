@@ -64,3 +64,64 @@ MyMorpionXO.prototype.game = function(){
    
 }
 
+/**
+ * Check if a round is won.
+ */
+
+MyMorpionXO.prototype.win = function(){
+    var box = document.querySelectorAll('.case');
+
+    if(box[0].textContent !== '' 
+      && box[0].textContent == box[1].textContent 
+      && box[1].textContent == box[2].textContent){
+        this.theWinnerIs(box[0].textContent);
+    }
+    else if(box[3].textContent !== '' 
+      && box[3].textContent == box[4].textContent 
+      && box[4].textContent == box[5].textContent){
+        this.theWinnerIs(box[3].textContent);
+    }
+    else if(box[6].textContent !== '' 
+      && box[6].textContent == box[7].textContent 
+      && box[7].textContent == box[8].textContent){
+        this.theWinnerIs(box[6].textContent);
+    }
+    else if(box[0].textContent !== '' 
+      && box[0].textContent == box[3].textContent 
+      && box[3].textContent == box[6].textContent){
+        this.theWinnerIs(box[0].textContent);
+    }
+    else if(box[1].textContent !== '' 
+    && box[1].textContent == box[4].textContent 
+    && box[4].textContent == box[7].textContent){
+        this.theWinnerIs(box[1].textContent);
+    }
+    else if(box[2].textContent !== '' 
+    && box[2].textContent == box[5].textContent 
+    && box[5].textContent == box[8].textContent){
+        this.theWinnerIs(box[2].textContent);
+    }
+    else if(box[0].textContent !== '' 
+    && box[0].textContent == box[4].textContent 
+    && box[4].textContent == box[8].textContent){
+        this.theWinnerIs(box[0].textContent);
+    }
+    else if(box[2].textContent !== '' 
+    && box[2].textContent == box[4].textContent 
+    && box[4].textContent == box[6].textContent){
+        this.theWinnerIs(box[2].textContent);
+    }
+    else if(box[0].textContent !== '' 
+      && box[1].textContent !== '' 
+      && box[2].textContent !== '' 
+      && box[3].textContent !== '' 
+      && box[4].textContent !== '' 
+      && box[5].textContent !== '' 
+      && box[6].textContent !== '' 
+      && box[7].textContent !== '' 
+      && box[8].textContent !== ''){
+        this.theWinnerIs();
+    }
+
+}
+
