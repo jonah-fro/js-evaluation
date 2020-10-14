@@ -125,3 +125,47 @@ MyMorpionXO.prototype.win = function(){
 
 }
 
+/**
+ * Say who wins
+ */
+var victoryX = 0;
+var victoryO = 0;
+
+MyMorpionXO.prototype.theWinnerIs = function(winner){
+
+    if(winner === undefined){
+        alert('Round nul. On recommence !');
+    }
+    if(winner === 'X'){
+        alert(winner +', remporte ce round.');
+        victoryX++;
+        if(victoryX >= 3){
+            alert(winner +', a gagné cette partie !');
+        victoryX = 0;
+        victoryO = 0;
+        }
+    }
+    if(winner === 'O'){
+        alert(winner +', remporte ce round.');
+        victoryO++;
+        if(victoryO >= 3){
+            alert(winner +', a gagné cette partie !');
+        victoryX = 0;
+        victoryO = 0;
+        }
+    }
+
+    var cases = document.querySelectorAll('.case');
+    cases.forEach(el => el.textContent = '');
+}
+
+/**
+ * Start the game
+ */
+
+MyMorpionXO.prototype.run = function(){
+    if(!document.querySelector('table'))this.game();
+}
+
+var go = new MyMorpionXO();
+go.run();
