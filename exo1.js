@@ -5,6 +5,12 @@ Vous devrez colorer aléatoirement
 chaque case de la grille d’une couleur différente 
 toutes les “1s” à “2s”. */
 
+/**
+*Génère un tableau
+*@param xAxis = nombre de ligne du tableau
+*@param yAxis = nombre de colonne du tableau
+*/
+
 function gridGenerator(xAxis, yAxis) {
   var table = document.createElement("table");
   var tr = document.createElement("tr");
@@ -28,6 +34,7 @@ function gridGenerator(xAxis, yAxis) {
   return table;
 }
 
+/** Selectionne une couleur aléatoire */
 function getRandomColor() {
   function random() {
     return Math.random()*255;
@@ -35,13 +42,14 @@ function getRandomColor() {
   return "rgb(" +random()+ "," +random()+ "," +random()+")";
 }
 
+/** Choisi aléatoirement un td individuel pour le colorer*/
 function selecteRandomColor(table) {
   var tds = table.getElementsByTagName("td");
 
 
   return tds[Math.floor(Math.random) * tds.length];
 }
-
+/** Actualise une couleur aléatoire */
 function updateColor(table) {
   var cell = table.getElementsByTagName("td");
   for (var i = 0; i < cell.length; i++) {
@@ -50,6 +58,13 @@ function updateColor(table) {
   }
 }
 
+/**
+*
+*Lance le code
+*@param 20 = xAxis
+*@param 9 = yAxis
+*actualise le code toute les secondes
+*/
 var table = gridGenerator(20, 9);
 setInterval(function() {
     updateColor(table);
